@@ -1,1 +1,496 @@
-<h1>Islam Hossain</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Islam Hossain | Portfolio</title>
+    <meta name="description" content="Professional portfolio website for Islam Hossain, Full Stack Developer." />
+    <style>
+        :root {
+            --bg: #f4f9ff;
+            --surface: #ffffff;
+            --surface-soft: #eef7ff;
+            --text: #12324a;
+            --muted: #5d7284;
+            --accent: #5aa9ff;
+            --accent-2: #8ed6ff;
+            --border: #dceeff;
+            --shadow: 0 16px 40px rgba(90, 169, 255, 0.16);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            background: linear-gradient(135deg, #f8fbff 0%, #eef7ff 100%);
+            min-height: 100vh;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 24px;
+            align-items: center;
+            padding: 24px 0 16px;
+        }
+
+        .hero-card,
+        .section-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-card {
+            padding: 32px;
+        }
+
+        .hero-card .eyebrow {
+            display: inline-block;
+            margin-bottom: 12px;
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: var(--surface-soft);
+            color: var(--accent);
+            font-size: 0.84rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1.1;
+        }
+
+        .lead {
+            color: var(--muted);
+            font-size: 1.02rem;
+            line-height: 1.8;
+            margin: 0 0 20px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 11px 16px;
+            border-radius: 999px;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: #07243a;
+        }
+
+        .btn-secondary {
+            background: var(--surface-soft);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .pill {
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: var(--surface-soft);
+            color: var(--text);
+            font-size: 0.92rem;
+        }
+
+        .photo-card {
+            padding: 24px;
+            text-align: center;
+        }
+
+        .photo-card img {
+            width: min(100%, 260px);
+            aspect-ratio: 1;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--border);
+            box-shadow: 0 12px 30px rgba(90, 169, 255, 0.18);
+            margin-bottom: 14px;
+        }
+
+        .photo-card h2 {
+            margin: 4px 0 8px;
+            font-size: 1.3rem;
+        }
+
+        .photo-card p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .section-card {
+            padding: 24px;
+            margin-top: 18px;
+        }
+
+        .section-title {
+            margin: 0 0 10px;
+            font-size: 1.25rem;
+        }
+
+        .section-copy {
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .info-card,
+        .project-card,
+        .skill-card {
+            background: var(--surface-soft);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 16px;
+        }
+
+        .info-card h3,
+        .project-card h3,
+        .skill-card h3 {
+            margin: 0 0 8px;
+            font-size: 1rem;
+        }
+
+        .info-card p,
+        .project-card p,
+        .skill-card p,
+        .timeline-item p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .timeline {
+            display: grid;
+            gap: 12px;
+        }
+
+        .timeline-item {
+            background: var(--surface-soft);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 14px 16px;
+        }
+
+        .timeline-item strong {
+            color: var(--text);
+        }
+
+        .project-card a {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .project-card a:hover {
+            color: #2a7bc2;
+        }
+
+        @media (max-width: 860px) {
+
+            .hero,
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <section class="hero">
+            <div class="hero-card">
+                <span class="eyebrow">Full Stack Developer</span>
+                <h1>Hi, I’m Islam Hossain</h1>
+                <p class="lead">
+                    ASP.NET Full-stack Engineer with a total of 7+ years of experience in software engineering,
+                    including 4+
+                    years in designing and building scalable enterprise systems. Experienced in delivering solutions
+                    across ERP, healthcare, telemedicine, and banking domains. Proficient in C#, .NET Core, and modern
+                    web technologies.
+                </p>
+                <ul style="color: var(--muted); line-height: 1.7;">
+                    <li>Build fintech solutions using .NET Core & Angular, RESTful services. </li>
+                    <li>Designed database Systems & optimized complex queries.</li>
+                </ul>
+                <!-- <div class="buttons">
+                    <a class="btn btn-primary"
+                        href="Islam%20Hossain%20-%20CV%20(AspNet%20&%20Angular%20Full%20Stack).pdf" target="_blank"
+                        rel="noopener">Download CV</a>
+                </div> -->
+                <div class="stats">
+                    <small>
+                        <span class="pill">ASP.NET</span>
+                        <span class="pill">Angular</span>
+                        <span class="pill">SQL, MySQL</span>
+                        <span class="pill">REST APIs</span>
+                        <span class="pill">Git & GitHub</span>
+                        <span class="pill">CICD Pipeline</span>
+                    </small>
+                </div>
+            </div>
+
+            <div class="photo-card hero-card">
+                <img src="profile.jpg" alt="Islam Hossain portrait" />
+                <h2>Islam Hossain</h2>
+                <p>
+                    <small>ASP.NET Core Developer | Angular | REST API </small> <br />
+                    <small>Email: <a href="mailto:mislamhn@gmail.com">mislamhn@gmail.com</a> | Phone: +8801710 001337</small>
+                </p>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-copy">
+                I’m a developer focused on building practical, scalable, and attractive web solutions.
+                I enjoy working across front-end and back-end layers to create smooth experiences that are both
+                functional and visually appealing.
+            </p>
+        </section>
+
+        <section class="section-card">
+            <h2 class="section-title">Skills</h2>
+            <div class="grid-3">
+                <div class="skill-card">
+                    <h3>Technical</h3>
+                    <p><strong>Recently Worked with:</strong> ASP.NET, REST APIs, Entity Framework, LINQ, Angular,
+                        TypeScript, NodeJS, SQL, MySQL</p>
+                    <p><strong>Previously Worked with:</strong> PHP, CodeIgniter, Laravel, CakePHP, React, VueJS</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Professional</h3>
+                    <p><strong>Skills:</strong> Problem solving, Teamwork, Communication, Project Delivery, eCommerce,
+                        HR Management, Microfinance</p>
+                    <p><strong>Area:</strong> eCommerce, HR Management, Microfinance, Point of Sale, Event Management
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <h3>Design</h3>
+                    <p><strong>Tools:</strong> UI/UX thinking, responsive layouts, clean visual structure, Bootstrap,
+                        Tailwind, Figma & PSD</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>Software Developer </strong>
+                    <p>COAST Foundation | Dhaka, Bangladesh | July 2025 – April 2026</p>
+                    <ul>
+                        <li>Developed Total Solution (MFI, HRM, AMS, MEAL, MFI) Improved performance 60%</li>
+                        <li>Mentored 2+ junior developers, improving team productivity by 55%</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <strong>Full Stack Software Developer </strong>
+                    <p>Grameen Communications | Dhaka, Bangladesh | March 2022 – June 2025</p>
+                    <ul>
+                        <li>Developed eCommerce, Fintech, MFI and Classifieds sites, Improved performance 30%</li>
+                        <li>Built a master CMS for many websites, reducing development times by 70% </li>
+                        <li>Mentored 8+ junior developers & interns, improving team productivity by 45%</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <strong>Full Stack Software Developer </strong>
+                    <p>Radisson Digital Technology | Dhaka, Bangladesh | April 2020 – February 2022 </p>
+                    <ul>
+                        <li>Developed eCommerce, HR and Classifieds systems</li>
+                        <li>Built a CMS supporting 17+ new websites, reducing development time by 60%</li>
+                        <li>Mentored 6+ junior developers & interns, improving productivity by 65%</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <strong>Instructor (WEB)</strong>
+                    <p>Community Participation & Development (CPD) | Dhaka, Bangladesh | November 2017 – March 2020</p>
+                    <ul>
+                        <li>Developed applications for SAVE THE CHILDRENS, creating training schedule, Train the
+                            Trainers & regular follow-up and reporting to donors</li>
+                        <li>Developing a Job Sites. </li>
+                        <li>Developing a Training Management System and MEAL Management System. </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2 class="section-title">Education</h2>
+            <div class="grid-2">
+                <div class="info-card">
+                    <h3>BSc in Computer Science & Engineering</h3>
+                    <p><strong>University:</strong> National University (Dhaka City College)</p>
+                    <p><strong>Result Year:</strong> 2016</p>
+                    <br />
+                    <h3>Higher Secondary Certificate</h3>
+                    <p><strong>College:</strong> Rajshahi Govt. City College</p>
+                    <p><strong>Result Year:</strong> 2009</p>
+                    <br />
+                    <h3>Secondary School Certificate</h3>
+                    <p><strong>College:</strong> Chowmasia Rah.</p>
+                    <p><strong>Result Year:</strong> 2006</p>
+                </div>
+                <div class="info-card">
+                    <h3>Relevant Focus</h3>
+                    <p>
+                        C, C++, Data Structure & Algorithms, Object Oriented Programming, Database Management,
+                        Discrete Mathematics, Computer Organization & Architecture, Operating System, Software
+                        Engineering, Web Programming, Computer Networks, Artificial Intelligence,
+                        Machine Learning, Deep Learning, Natural Language Processing, Computer Vision, Cloud Computing,
+                        Cyber Security, Calculus, Linear Algebra, Probability & Statistics, and other related subjects.
+
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2 class="section-title">Project Portfolio</h2>
+            <p class="section-copy">
+                Add your real project links here to showcase your work in a clean and professional section.
+            </p>
+            <div class="grid-3">
+                <div class="project-card">
+                    <h3>PhicsArt</h3>
+                    <p>Profile website.</p>
+                    <img src="phicsart.png" alt="PhicsArt Project"
+                        style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 8px;" />
+                    <a href="https://www.phicsart.com">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <h3>IbnoHealth</h3>
+                    <p>Healthcare website.</p>
+                    <img src="ibnohealth.png" alt="IbnoHealth Project"
+                        style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 8px;" />
+                    <a href="#" target="_blank">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <h3>eCommerce CMS with POS, HRM & Courier Management</h3>
+                    <p>Diagnostic Center Management System.</p>
+                    <img src="cms.png" alt="eCommerce CMS Project"
+                        style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 8px;" />
+                    <a href="#" target="_blank">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <h3>Sheba Diagonostics</h3>
+                    <p>Diagnostic Center Management System.</p>
+                    <img src="shebadiagnostics.png" alt="Sheba Diagnostics Project"
+                        style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 8px;" />
+                    <a href="http://hms.phicsart.com/" target="_blank">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <h3>Online POS</h3>
+                    <p>Multiple Store POS for All</p>
+                    <img src="pos.png" alt="Online POS Project"
+                        style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 8px;" />
+                    <a href="#" target="_blank">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <h3>UmarMart</h3>
+                    <p>ECommerce platform for local businesses.</p>
+                    <img src="umarmart.png" alt="UmarMart Project"
+                        style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 8px;" />
+                    <a href="https://www.umarmart.com" target="_blank">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <h3>MOH WEAR</h3>
+                    <p>ECommerce platform for local businesses.</p>
+                    <img src="mohwear.png" alt="MOH WEAR Project"
+                        style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 8px;" />
+                    <a href="https://www.mohwear.muttaqwiinc.com" target="_blank">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <h3>Grameen Check</h3>
+                    <p>eCommerce</p>
+                    <img src="grameencheck.png" alt="Grameen Check Project"
+                        style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 8px;" />
+                    <a href="https://www.grameencheck.com" target="_blank">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <h3>Ghashful Borendro</h3>
+                    <p>eCommerce</p>
+                    <img src="ghashfulborendro.png" alt="Ghashful Borendro Project"
+                        style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 8px;" />
+                    <a href="https://www.ghashfulborendro.com" target="_blank">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <h3>AAA Trade International</h3>
+                    <p>Company website.</p>
+                    <img src="aaatrade.png" alt="AAA Trade International Project"
+                        style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 8px;" />
+                    <a href="https://www.aaatradeinternational.com" target="_blank">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <h3>Grameen Communications</h3>
+                    <p>Company website.</p>
+                    <img src="grameencommunications.png" alt="Grameen Communications Project"
+                        style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 8px;" />
+                    <a href="https://www.grameen.technology" target="_blank">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <h3>Grameen MPF</h3>
+                    <p>Company website.</p>
+                    <img src="grameenmpf.png" alt="Grameen MPF Project"
+                        style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 8px;" />
+                    <a href="https://www.grameenmpf.com" target="_blank">View Project →</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
